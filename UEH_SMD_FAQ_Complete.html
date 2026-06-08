@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEH SMD – School of Media Design for Global Creative Futures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        timDen: '#1C0A2E',
+                        timDam: '#5B1A8A',
+                        timGlow: '#B5179E',
+                        camNeon: '#FF6B35',
+                        vangHl: '#FFB627',
+                        kemNen: '#F5E6C8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hiệu ứng nền Ombre Gradient Tím nhạt chuyển động tinh tế */
+        body {
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 40%, #EDE7F6 70%, #FFE0B2 100%);
+            background-size: 400% 400%;
+            animation: gradientAnim 18s ease infinite;
+        }
+        @keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Cấu trúc Hộp nét liền (Card Grid) giao thoa phong cách trang chủ và chiến dịch */
+        .smd-box {
+            border: 2px solid #1C0A2E;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .smd-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px 0px #1C0A2E;
+        }
+        /* Hiệu ứng chuyển trang mượt mà */
+        .page-content {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-timDen font-sans antialiased selection:bg-camNeon selection:text-white min-h-screen flex flex-col justify-between">
+
+    <header class="border-b-2 border-timDen py-4 px-6 md:px-12 flex justify-between items-center bg-white sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
+            <div class="font-black text-xl tracking-tighter text-timDen flex items-center">
+                <span class="bg-timDam text-white px-2 py-0.5 rounded mr-1">UEH</span> SMD
+            </div>
+        </div>
+        
+        <nav class="hidden lg:flex space-x-6 text-[12px] font-extrabold uppercase tracking-wider items-center">
+            <button onclick="navigateTo('home')" id="nav-home" class="nav-btn text-timDam border-b-2 border-timDam pb-1">HOME</button>
+            <button onclick="navigateTo('about')" id="nav-about" class="nav-btn text-slate-600 hover:text-timDam transition pb-1">ABOUT</button>
+            <button onclick="navigateTo('academics')" id="nav-academics" class="nav-btn text-slate-600 hover:text-timDam transition pb-1">ACADEMICS</button>
+            <button onclick="navigateTo('story')" id="nav-story" class="nav-btn text-slate-600 hover:text-timDam transition pb-1 flex items-center gap-1">✨ STORY NGÀNH</button>
+            <button onclick="navigateTo('explorer')" id="nav-explorer" class="nav-btn text-slate-600 hover:text-timDam transition pb-1">CAREER EXPLORER</button>
+            <button onclick="navigateTo('quiz')" id="nav-quiz" class="nav-btn text-slate-600 hover:text-timDam transition pb-1">QUIZ TƯƠNG TÁC</button>
+            <button onclick="navigateTo('faq')" id="nav-faq" class="nav-btn text-slate-600 hover:text-timDam transition pb-1">FAQ</button>
+        </nav>
+
+        <div class="flex items-center space-x-3">
+            <span class="text-xs font-bold border-r pr-2 border-slate-300 cursor-pointer hover:text-timDam">EN</span>
+            <span class="text-xs font-black text-timDam cursor-pointer">VI</span>
+            <button onclick="navigateTo('register-page')" class="bg-timDen hover:bg-timDam text-white text-[10px] font-black px-3 py-2 rounded border border-timDen tracking-wider transition">
+                ENROLL TODAY
+            </button>
+        </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-timDen to-timDam text-white text-center py-2 px-4 text-xs font-semibold border-b border-timDen flex items-center justify-center gap-2">
+        <span class="animate-pulse">✨</span>
+        <span>ArtTech Interactive Effect: Wave your hand left / right to automatically switch website campaign content!</span>
+        <button onclick="this.parentElement.style.display='none'" class="bg-white/20 hover:bg-white/30 px-2 py-0.5 rounded text-[10px] font-bold">Got it</button>
+    </div>
+
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8 md:py-12">
+
+        <div id="page-home" class="page-content space-y-12">
+            <div class="smd-box rounded-2xl p-6 md:p-12 min-h-[400px] flex flex-col justify-between relative overflow-hidden bg-gradient-to-tr from-white via-white to-purple-50">
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none bg-[linear-gradient(to_right,#1C0A2E_1px,transparent_1px),linear-gradient(to_bottom,#1C0A2E_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                <div class="max-w-2xl z-10">
+                    <span class="text-timDam font-black tracking-widest text-[11px] uppercase bg-purple-100 px-3 py-1 rounded border border-timNhat inline-block mb-4">
+                        School of Media Design for Global Creative Futures
+                    </span>
+                    <h1 class="text-4xl md:text-7xl font-black text-timDen tracking-tight leading-tight mb-4">
+                        SCHOOL OF <br><span class="bg-gradient-to-r from-timDam via-timGlow to-camNeon bg-clip-text text-transparent">MEDIA DESIGN</span>
+                    </h1>
+                    <p class="text-sm md:text-base font-semibold text-slate-700 leading-relaxed mb-6">
+                        Đơn vị tiên phong thúc đẩy sự giao hòa giữa Công nghệ truyền thông, Mỹ thuật số và Tư duy quản trị kinh tế hiện đại tại Đại học Kinh tế TP. Hồ Chí Minh.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3 z-10 border-t border-slate-200 pt-6">
+                    <button onclick="navigateTo('story')" class="bg-camNeon hover:bg-timDen text-white font-black text-xs px-5 py-3 rounded-lg border border-timDen shadow-[3px_3px_0px_0px_#1C0A2E] transition">
+                        KHÁM PHÁ CHIẾN DỊCH "BEYOND THE BOX" →
+                    </button>
+                    <button onclick="navigateTo('register-page')" class="bg-white hover:bg-slate-50 text-timDen font-black text-xs px-5 py-3 rounded-lg border-2 border-timDen transition">
+                        Register for Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-about" class="page-content hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-black text-timDen uppercase tracking-tight">UEH - CTD - SMD LIFE & SCIENCE</h2>
+                <p class="text-sm text-slate-600 font-semibold mt-1">Tin tức và bài viết chuyên sâu từ góc nhìn chuyên gia</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="smd-box p-6 rounded-xl flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">UEH - CTD - SMD LIFE</div>
+                        <div class="text-xs font-bold text-timDam mb-3">Giáo dục chất lượng • Đối tác mục tiêu</div>
+                        <h3 onclick="viewPost('post-1')" class="font-black text-base text-timDen mb-2 hover:text-timDam cursor-pointer line-clamp-3">
+                            SMD Academic Sharing | Integration and Co-creation: Global and Cross-Cultural Art
+                        </h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed line-clamp-3">Hội thảo khoa học quốc tế thúc đẩy năng lực đồng sáng tạo xuyên văn hóa của sinh viên trong kỷ nguyên số.</p>
+                    </div>
+                    <button onclick="viewPost('post-1')" class="text-[11px] font-black uppercase text-timDam mt-4 text-left hover:underline">Read More →</button>
+                </div>
+
+                <div class="smd-box p-6 rounded-xl flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">SCIENCE & EXPERT INSIGHTS</div>
+                        <div class="text-xs font-bold text-emerald-600 mb-3">Công nghệ sáng tạo • Phát triển hạ tầng</div>
+                        <h3 onclick="viewPost('post-2')" class="font-black text-base text-timDen mb-2 hover:text-emerald-600 cursor-pointer line-clamp-3">
+                            [RTD 2026] International Conference "Resilience by Technology and Design" - FutureScape
+                        </h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed line-clamp-3">Thiết kế tương lai và kiến tạo không gian sống bền vững thông qua hàng loạt giải pháp đột phá công nghệ mới.</p>
+                    </div>
+                    <button onclick="viewPost('post-2')" class="text-[11px] font-black uppercase text-emerald-600 mt-4 text-left hover:underline">Read More →</button>
+                </div>
+
+                <div class="smd-box p-6 rounded-xl flex flex-col justify-between bg-white">
+                    <div>
+                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">MEDIA COVERAGE OF SMD</div>
+                        <div class="text-xs font-bold text-amber-600 mb-3">Giáo dục chất lượng • Sáng tạo số</div>
+                        <h3 onclick="viewPost('post-3')" class="font-black text-base text-timDen mb-2 hover:text-amber-600 cursor-pointer line-clamp-3">
+                            UEH – SMD Students Shine at Tsinghua University with AI-Powered Social Impact Projects
+                        </h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed line-clamp-3">Sinh viên SMD xuất sắc ghi dấu ấn tại Đại học Thanh Hoa danh tiếng với các dự án AI hướng về cộng đồng.</p>
+                    </div>
+                    <button onclick="viewPost('post-3')" class="text-[11px] font-black uppercase text-amber-600 mt-4 text-left hover:underline">Read More →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-academics" class="page-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end">
+                <div>
+                    <span class="text-timDam font-bold tracking-widest uppercase text-xs block">// Triển lãm đồ án thực tế xuất sắc</span>
+                    <h2 class="text-3xl font-black tracking-tight mt-1 text-timDen">STUDENT PORTFOLIO GALLERY</h2>
+                </div>
+                <p class="text-xs font-semibold max-w-sm text-slate-700 mt-2 md:mt-0">Nơi các ý tưởng sáng tạo bùng nổ và giải quyết hoàn hảo các bài toán kinh tế thị trường.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="smd-box rounded-xl overflow-hidden group bg-white">
+                    <div class="h-52 md:h-60 bg-slate-100 overflow-hidden relative border-b-2 border-timDen">
+                        <div class="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition duration-500" style="background-image: url('./lll.png');"></div>
+                        <span class="absolute top-4 right-4 bg-timDam text-white font-bold text-xs px-3 py-1 rounded-md border border-timDen">#MediaArts</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg md:text-xl font-black mb-2 text-timDen group-hover:text-timDam transition">Đồ án: "Lá La Land" - Kể chuyện qua lá xanh</h3>
+                        <p class="text-xs text-slate-600 mb-4 font-medium leading-relaxed">Xây dựng chiến dịch truyền thông về lối sống bền vững thông qua nghệ thuật sắp đặt và kể chuyện tương tác với vật liệu tự nhiên.</p>
+                        <div class="border-t border-dashed border-slate-300 pt-3 flex justify-between items-center text-[11px] font-bold text-timDen">
+                            <span>Chiến lược: Kể chuyện bền vững</span>
+                            <span>Thể hiện: Sắp đặt & Tương tác</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="smd-box rounded-xl overflow-hidden group bg-white">
+                    <div class="h-52 md:h-60 bg-slate-100 overflow-hidden relative border-b-2 border-timDen">
+                        <div class="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition duration-500" style="background-image: url('./cc.jpg');"></div>
+                        <span class="absolute top-4 right-4 bg-camNeon text-white font-bold text-xs px-3 py-1 rounded-md border border-timDen">#CommunicationDesign</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg md:text-xl font-black mb-2 text-timDen group-hover:text-camNeon transition">Đồ án: "Chạm Chàm" - Chạm vào văn hóa màu chàm</h3>
+                        <p class="text-xs text-slate-600 mb-4 font-medium leading-relaxed">Tái định vị và truyền tải giá trị văn hóa trang phục nhuộm chàm truyền thống thông qua ngôn ngữ thiết kế nhận diện hiện đại.</p>
+                        <div class="border-t border-dashed border-slate-300 pt-3 flex justify-between items-center text-[11px] font-bold text-timDen">
+                            <span>Chiến lược: Bảo tồn văn hóa</span>
+                            <span>Thể hiện: Thiết kế nhận diện</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-post-1" class="page-content hidden max-w-3xl mx-auto">
+            <button onclick="navigateTo('about')" class="mb-6 text-xs font-bold text-timDam hover:underline flex items-center gap-1">← QUAY LẠI TRANG GIỚI THIỆU</button>
+            <div class="bg-white border-2 border-timDen p-6 md:p-10 rounded-2xl shadow-sm space-y-4">
+                <span class="text-xs font-black text-timDam bg-purple-100 px-3 py-1 rounded">UEH - CTD - SMD LIFE</span>
+                <h1 class="text-2xl md:text-4xl font-black text-timDen leading-tight">SMD Academic Sharing | Integration and Co-creation: Global and Cross-Cultural Art</h1>
+                <p class="text-xs text-slate-400 font-bold">Ngày đăng: 15 Tháng 4, 2026 | Chuyên mục: Giáo dục chất lượng & Đối tác vì mục tiêu phát triển</p>
+                <hr class="border-timDen/10">
+                <div class="text-sm text-slate-700 leading-relaxed space-y-4 font-medium">
+                    <p>Chuỗi diễn đàn <strong>SMD Academic Sharing</strong> vừa qua đã tổ chức thành công số đặc biệt với chủ đề <em>"Integration and Co-creation: Global and Cross-Cultural Art"</em>. Sự kiện quy tụ nhiều học giả, chuyên gia hàng đầu quốc tế cùng toàn thể sinh viên ngành Nghệ thuật truyền thông và Thiết kế truyền thông tham dự.</p>
+                    <p>Tại buổi chia sẻ, các diễn giả đã tập trung mổ xẻ cách thức chuyển hóa các giá trị nghệ thuật truyền thống bản địa vào không gian số đa văn hóa. Sự kiện giúp thúc đẩy năng lực đồng sáng tạo (co-creation) xuyên văn hóa của sinh viên trong kỷ nguyên số.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-post-2" class="page-content hidden max-w-3xl mx-auto">
+            <button onclick="navigateTo('about')" class="mb-6 text-xs font-bold text-emerald-600 hover:underline flex items-center gap-1">← QUAY LẠI TRANG GIỚI THIỆU</button>
+            <div class="bg-white border-2 border-timDen p-6 md:p-10 rounded-2xl shadow-sm space-y-4">
+                <span class="text-xs font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded">SCIENCE & EXPERT INSIGHTS</span>
+                <h1 class="text-2xl md:text-4xl font-black text-timDen leading-tight">[RTD 2026] International Conference "Resilience by Technology and Design" - FutureScape</h1>
+                <p class="text-xs text-slate-400 font-bold">Ngày đăng: 05 Tháng 5, 2026 | Chuyên mục: Công nghệ sáng tạo & Phát triển hạ tầng</p>
+                <hr class="border-timDen/10">
+                <div class="text-sm text-slate-700 leading-relaxed space-y-4 font-medium">
+                    <p>Hội thảo khoa học quốc tế <strong>Resilience by Technology and Design (RTD 2026)</strong> với phân nhánh chủ đề <em>"FutureScape – Designing the Future"</em> đã chính thức khai mạc tại Đại học Kinh tế TP. Hồ Chí Minh (UEH).</p>
+                    <p>Hội thảo tập trung thảo luận về vai trò cốt lõi của công nghệ thông minh kết hợp cùng tư duy thiết kế bền vững (Resilient Design). Thiết kế tương lai và kiến tạo không gian sống bền vững thông qua hàng loạt giải pháp đột phá công nghệ mới như AI, dữ liệu lớn và đồ họa tương tác 3D.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-post-3" class="page-content hidden max-w-3xl mx-auto">
+            <button onclick="navigateTo('about')" class="mb-6 text-xs font-bold text-amber-600 hover:underline flex items-center gap-1">← QUAY LẠI TRANG GIỚI THIỆU</button>
+            <div class="bg-white border-2 border-timDen p-6 md:p-10 rounded-2xl shadow-sm space-y-4">
+                <span class="text-xs font-black text-amber-600 bg-amber-50 px-3 py-1 rounded">MEDIA COVERAGE</span>
+                <h1 class="text-2xl md:text-4xl font-black text-timDen leading-tight">UEH – SMD Students Shine at Tsinghua University with AI-Powered Social Impact Projects</h1>
+                <p class="text-xs text-slate-400 font-bold">Ngày đăng: 17 Tháng 5, 2026 | Chuyên mục: Giáo dục chất lượng & Sáng tạo nghệ thuật số</p>
+                <hr class="border-timDen/10">
+                <div class="text-sm text-slate-700 leading-relaxed space-y-4 font-medium">
+                    <p>Nhóm sinh viên xuất sắc thuộc Trường Công nghệ và Thiết kế UEH (CTD), đại diện bởi khoa Thiết kế Truyền thông (SMD), đã tạo nên tiếng vang lớn tại chương trình trao đổi và triển lãm học thuật tổ chức tại <strong>Đại học Thanh Hoa (Tsinghua University)</strong>.</p>
+                    <p>Sinh viên SMD xuất sắc ghi dấu ấn tại Đại học Thanh Hoa với các dự án AI hướng về cộng đồng. Dự án chinh phục hội đồng chuyên môn quốc tế nhờ sự kết hợp khéo léo giữa kỹ thuật thị giác máy tính với ngôn ngữ kể chuyện hình ảnh đầy tính nhân văn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-story" class="page-content hidden">
+            <div class="smd-box p-6 md:p-12 rounded-2xl max-w-4xl mx-auto text-center bg-white/95">
+                <span class="text-camNeon font-black tracking-widest uppercase text-xs block mb-2">// CAMPAIGN THEME INTEGRATION</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-4 text-timDen leading-none">BEYOND THE BOX</h2>
+                <p class="text-xs md:text-base font-semibold max-w-2xl mx-auto leading-relaxed mb-8 text-slate-800">
+                    Khuôn khổ kinh tế vững chắc của UEH không phải chiếc hộp giới hạn, mà chính là <span class="text-timDam font-black">bệ phóng nâng tầm sáng tạo</span> — nơi mỗi thông điệp truyền thông là sự kết hợp giữa thẩm mỹ nghệ thuật và tư duy chiến lược nhạy bén.
+                </p>
+                
+                <div class="w-full aspect-video bg-timDen rounded-xl border-2 border-timDen shadow-xl relative overflow-hidden group">
+                    <iframe 
+                        id="smd-youtube-video"
+                        class="w-full h-full object-cover" 
+                        src="https://www.youtube.com/embed/9cGGQivbR1o?enablejsapi=1&rel=0&modestbranding=1&origin=https://cdntw.com" 
+                        title="Giới thiệu về CTD - UEH University" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                    
+                    <div class="absolute bottom-12 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+                        <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/20 shadow-md">
+                            💡 Mẹo: Bấm chữ "YouTube" hoặc ô vuông phóng to ở góc dưới để xem trực tiếp tại YouTube!
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-explorer" class="page-content hidden space-y-10">
+            <div class="text-center">
+                <span class="text-timDam font-bold tracking-widest text-xs uppercase block">// Công cụ định hướng thông minh</span>
+                <h2 class="text-3xl font-black tracking-tight mt-1 text-timDen">INTERACTIVE CAREER PATH EXPLORER</h2>
+                <p class="text-slate-600 mt-2 text-xs font-semibold max-w-xl mx-auto">Chọn từ khóa mô tả sở thích để hệ thống hiển thị vị trí nghề nghiệp giao thoa lý tưởng dành cho bạn.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
+                <button onclick="toggleFilter(this, 'sangat')" class="career-tag-btn border-2 border-timDen px-4 py-1.5 rounded-full text-xs font-bold bg-white text-timDen hover:bg-purple-50 shadow-[2px_2px_0px_0px_#1C0A2E] transition"># Tôi thích Sáng tạo</button>
+                <button onclick="toggleFilter(this, 'kinhdoanh')" class="career-tag-btn border-2 border-timDen px-4 py-1.5 rounded-full text-xs font-bold bg-white text-timDen hover:bg-purple-50 shadow-[2px_2px_0px_0px_#1C0A2E] transition"># Tôi thích Kinh doanh</button>
+                <button onclick="toggleFilter(this, 'congnghe')" class="career-tag-btn border-2 border-timDen px-4 py-1.5 rounded-full text-xs font-bold bg-white text-timDen hover:bg-purple-50 shadow-[2px_2px_0px_0px_#1C0A2E] transition"># Tôi thích Công nghệ</button>
+                <button onclick="toggleFilter(this, 'kechuyen')" class="career-tag-btn border-2 border-timDen px-4 py-1.5 rounded-full text-xs font-bold bg-white text-timDen hover:bg-purple-50 shadow-[2px_2px_0px_0px_#1C0A2E] transition"># Tôi thích Kể chuyện</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div data-tags="sangat kechuyen" class="career-card border-2 border-timDen bg-gradient-to-br from-purple-50 to-orange-50 p-6 rounded-xl hover:shadow-[5px_5px_0px_0px_#1C0A2E] transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-timDam text-white px-2 py-0.5 rounded border border-timDen">Định hướng cốt lõi</span>
+                            <h3 class="text-xl font-black text-timDen mt-1">Creative Director</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] font-black text-slate-400 uppercase">Salary Range</p>
+                            <p class="text-xs md:text-sm font-black text-camNeon">35M - 70M VND</p>
+                        </div>
+                    </div>
+                    <p class="text-xs font-bold text-timDen mb-1">🛠️ Kỹ năng yêu cầu:</p>
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="text-[11px] bg-white border border-timDen px-2 py-0.5 rounded font-semibold">Tư duy chiến dịch</span>
+                        <span class="text-[11px] bg-white border border-timDen px-2 py-0.5 rounded font-semibold">Visual Storytelling</span>
+                    </div>
+                    <p class="text-[11px] text-slate-700 font-medium border-t border-timDen/10 pt-2">Sáng làm việc chặt chẽ cùng Brand Manager để tháo gỡ bài toán doanh số (Khuôn khổ), chiều bão não cùng đội ngũ thiết kế tìm thông điệp nghệ thuật bùng nổ (Sáng tạo).</p>
+                </div>
+                
+                <div data-tags="congnghe sangat" class="career-card border-2 border-timDen bg-white p-6 rounded-xl hover:shadow-[5px_5px_0px_0px_#1C0A2E] transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-slate-200 text-slate-700 px-2 py-0.5 rounded border border-timDen">Giao thoa số</span>
+                            <h3 class="text-xl font-black text-timDen mt-1">UX/UI Designer</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] font-black text-slate-400 uppercase">Salary Range</p>
+                            <p class="text-xs md:text-sm font-black text-camNeon">20M - 45M VND</p>
+                        </div>
+                    </div>
+                    <p class="text-xs font-bold text-timDen mb-1">🛠️ Kỹ năng yêu cầu:</p>
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="text-[11px] bg-purple-50 border border-timDen px-2 py-0.5 rounded font-semibold">User Research</span>
+                        <span class="text-[11px] bg-purple-50 border border-timDen px-2 py-0.5 rounded font-semibold">Wireframing</span>
+                    </div>
+                    <p class="text-[11px] text-slate-700 font-medium border-t border-timDen/10 pt-2">Sáng phân tích số liệu biểu đồ hành vi, tỷ lệ chuyển đổi và tỷ lệ thoát của người dùng trên hệ thống số (Khuôn khổ), chiều thiết kế hiệu ứng giữ chân khách hàng (Sáng tạo).</p>
+                </div>
+
+                <div data-tags="kinhdoanh kechuyen" class="career-card border-2 border-timDen bg-white p-6 rounded-xl hover:shadow-[5px_5px_0px_0px_#1C0A2E] transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-amber-100 text-amber-800 px-2 py-0.5 rounded border border-timDen">Tư duy chiến lược</span>
+                            <h3 class="text-xl font-black text-timDen mt-1">Marketing Strategist</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] font-black text-slate-400 uppercase">Salary Range</p>
+                            <p class="text-xs md:text-sm font-black text-camNeon">25M - 55M VND</p>
+                        </div>
+                    </div>
+                    <p class="text-xs font-bold text-timDen mb-1">🛠️ Kỹ năng yêu cầu:</p>
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="text-[11px] bg-amber-50 border border-timDen px-2 py-0.5 rounded font-semibold">Market Research</span>
+                        <span class="text-[11px] bg-amber-50 border border-timDen px-2 py-0.5 rounded font-semibold">Data Analytics</span>
+                    </div>
+                    <p class="text-[11px] text-slate-700 font-medium border-t border-timDen/10 pt-2">Xây dựng chiến lược tiếp thị dựa trên dữ liệu kinh tế vững chắc của doanh nghiệp, đồng thời kể câu chuyện thương hiệu chạm đến cảm xúc khách hàng.</p>
+                </div>
+
+                <div data-tags="sangat kechuyen kinhdoanh" class="career-card border-2 border-timDen bg-gradient-to-br from-orange-50 to-purple-50 p-6 rounded-xl hover:shadow-[5px_5px_0px_0px_#1C0A2E] transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-timDen">Sản xuất nội dung</span>
+                            <h3 class="text-xl font-black text-timDen mt-1">Creative Content Creator</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] font-black text-slate-400 uppercase">Salary Range</p>
+                            <p class="text-xs md:text-sm font-black text-camNeon">15M - 35M VND</p>
+                        </div>
+                    </div>
+                    <p class="text-xs font-bold text-timDen mb-1">🛠️ Kỹ năng yêu cầu:</p>
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        <span class="text-[11px] bg-emerald-50 border border-timDen px-2 py-0.5 rounded font-semibold">Copywriting</span>
+                        <span class="text-[11px] bg-emerald-50 border border-timDen px-2 py-0.5 rounded font-semibold">Video Production</span>
+                    </div>
+                    <p class="text-[11px] text-slate-700 font-medium border-t border-timDen/10 pt-2">Lên ý tưởng sáng tạo, viết kịch bản và sản xuất các nội dung truyền thông đa nền tảng (TikTok, YouTube) để tối ưu hóa hiệu quả kinh doanh của chiến dịch.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-quiz" class="page-content hidden max-w-3xl mx-auto">
+            <div id="quiz-card" class="border-2 border-timDen bg-timDen text-white p-6 md:p-8 rounded-2xl flex flex-col justify-between shadow-lg">
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-vangHl font-bold tracking-widest text-xs uppercase block">// Giải mã bản thân</span>
+                        <span id="quiz-progress" class="text-xs text-purple-200 font-bold bg-white/10 px-2 py-0.5 rounded border border-white/10">Câu 1/5</span>
+                    </div>
+                    <h3 class="text-2xl font-black tracking-tight mb-6">QUIZ: BẠN CÓ PHÙ HỢP VỚI SMD?</h3>
+                    
+                    <div class="bg-white/10 p-5 rounded-xl border border-white/20">
+                        <p id="quiz-question-text" class="font-bold text-sm md:text-base text-purple-100 mb-4"></p>
+                        <div id="quiz-options-container" class="space-y-3">
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center text-[11px] font-black uppercase text-white/50 mt-6 border-t border-white/10 pt-4">
+                    <span>Hệ thống chấm điểm tự động</span>
+                    <button id="quiz-next-btn" onclick="nextQuestion()" disabled class="text-slate-400 cursor-not-allowed font-black flex items-center gap-1">
+                        CÂU TIẾP THEO →
+                    </button>
+                </div>
+            </div>
+
+            <div id="quiz-result-card" class="border-2 border-timDen bg-white p-6 md:p-8 rounded-2xl shadow-xl space-y-6 text-center hidden">
+                <span class="text-camNeon font-black tracking-widest uppercase text-xs block">// KẾT QUẢ ĐÁNH GIÁ NĂNG LỰC</span>
+                <h3 id="result-title" class="text-3xl font-black text-timDen"></h3>
+                <div class="p-5 rounded-xl border border-dashed border-timDen/20 bg-purple-50/50">
+                    <p id="result-desc" class="text-sm text-slate-700 leading-relaxed font-semibold"></p>
+                </div>
+                <div class="flex justify-center gap-3 pt-2">
+                    <button onclick="resetQuiz()" class="bg-white hover:bg-slate-50 text-timDen font-black text-xs px-5 py-3 rounded-lg border-2 border-timDen transition">
+                        LÀM LẠI QUIZ ↺
+                    </button>
+                    <button onclick="navigateTo('register-page')" class="bg-timDam hover:bg-timDen text-white font-black text-xs px-5 py-3 rounded-lg border border-timDen shadow-[3px_3px_0px_0px_#1C0A2E] transition">
+                        NHẬN TƯ VẤN LỘ TRÌNH NGÀNH →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-faq" class="page-content hidden max-w-4xl mx-auto space-y-4">
+            <div class="text-center mb-6">
+                <span class="text-camNeon font-bold tracking-widest text-xs uppercase block">// Giải đáp nhanh thông tin</span>
+                <h2 class="text-2xl md:text-3xl font-black tracking-tight mt-1 text-timDen">CÂU HỎI THƯỜNG GẶP (FAQ)</h2>
+            </div>
+            
+            
+            <div class="space-y-4">
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition">
+                        <span>1. Học Thiết kế Truyền thông tại trường kinh tế (UEH) khác gì trường mỹ thuật đơn thuần?</span>
+                        <span class="text-base font-bold text-timDam">+</span>
+                    </button>
+                    <div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">
+                        Học tại SMD UEH giúp sinh viên kết hợp tư duy nghệ thuật với kiến thức kinh tế, marketing và quản trị để tạo ra những sản phẩm sáng tạo có giá trị thực tiễn.
+                    </div>
+                </div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>2. Sinh viên SMD được học những môn gì nổi bật?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Sinh viên được học Thiết kế đồ họa, Branding, UX/UI, Motion Graphics, Truyền thông số, Sản xuất nội dung số và các môn nền tảng kinh tế.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>3. Sinh viên có cơ hội thực tập từ sớm không?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Có. Sinh viên được tham gia dự án thực tế, cuộc thi chuyên môn và chương trình kết nối doanh nghiệp ngay từ những năm đầu.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>4. Học ngành này có cần biết vẽ trước không?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Không bắt buộc. Chương trình đào tạo từ cơ bản đến nâng cao và giúp sinh viên phát triển kỹ năng thiết kế bài bản.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>5. Cơ hội nghề nghiệp sau khi tốt nghiệp là gì?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Sinh viên có thể trở thành Graphic Designer, Brand Designer, UX/UI Designer, Content Creator, Art Director hoặc Creative Director.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>6. Chương trình có học về AI và công nghệ mới không?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Có. Sinh viên được tiếp cận AI sáng tạo, công nghệ truyền thông số, thiết kế trải nghiệm người dùng và các xu hướng mới của ngành.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>7. Sinh viên có được tham gia hoạt động quốc tế không?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">UEH thường xuyên tổ chức các chương trình trao đổi học thuật, hội thảo quốc tế và dự án hợp tác với các đối tác toàn cầu.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>8. Môi trường học tập tại SMD có gì đặc biệt?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">Sinh viên được học qua dự án thực tế, làm việc nhóm, nhận phản hồi liên tục và phát triển tư duy sáng tạo liên ngành.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>9. Điều kiện xét tuyển vào SMD là gì?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">SMD áp dụng các phương thức tuyển sinh theo quy định của UEH và được cập nhật hằng năm trên cổng thông tin tuyển sinh.</div></div>
+
+                <div class="border-2 border-timDen bg-white rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#1C0A2E]"><button onclick="toggleFaq(this)" class="w-full text-left p-4 font-black text-xs md:text-sm flex justify-between items-center bg-slate-50 transition"><span>10. Vì sao nên chọn SMD tại UEH?</span><span class="text-base font-bold text-timDam">+</span></button><div class="hidden p-4 border-t border-timDen bg-white text-xs font-medium leading-relaxed text-slate-700">SMD là môi trường giao thoa giữa nghệ thuật, công nghệ và kinh doanh, giúp sinh viên phát triển năng lực sáng tạo gắn với nhu cầu thực tế của thị trường.</div></div>
+            </div>
+
+
+        <div id="page-register-page" class="page-content hidden max-w-md mx-auto">
+            <div class="border-2 border-timDen bg-vangHl p-6 rounded-2xl shadow-[4px_4px_0px_0px_#1C0A2E]">
+                <h3 class="text-xl font-black tracking-tight mb-3 text-timDen uppercase">ĐĂNG KÝ XÉT TUYỂN TƯ VẤN</h3>
+                <p class="text-xs font-semibold text-timDen/80 mb-5 leading-relaxed">Để lại thông tin để đặt lịch hẹn cùng các Đại sứ sinh viên khoa SMD.</p>
+                <form class="space-y-3">
+                    <div>
+                        <label class="block text-[9px] font-black uppercase text-timDen mb-1">Họ và tên học sinh</label>
+                        <input type="text" placeholder="Nguyễn Văn A" class="w-full p-2.5 rounded-lg text-xs border border-timDen font-semibold bg-white focus:outline-none">
+                    </div>
+                </form>
+                <button onclick="alert('Đăng ký thành công!')" class="w-full bg-timDen hover:bg-timDam text-white font-black py-3 rounded-lg text-xs uppercase tracking-wider transition mt-5 border border-timDen shadow-[2px_2px_0px_0px_#FF6B35]">
+                    GỬI THÔNG TIN ĐĂNG KÝ
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-timDen text-white border-t-2 border-timDen py-6 text-center text-[10px] font-bold tracking-widest uppercase mt-auto">
+        <p class="text-purple-200 mb-1">DỰ ÁN IMC: ACADEMIC CULTURE BRANDING FOR SMD - UEH</p>
+        <p class="text-white/30">Copyright © 2022. University of Economics Ho Chi Minh City. Designed by SMD.</p>
+    </footer>
+
+    <script>
+        let activeTags = [];
+
+        // DỮ LIỆU BỘ 5 CÂU HỎI
+        const quizData = [
+            {
+                question: "Khi đứng trước một chiến dịch truyền thông hoặc một sản phẩm quảng cáo ấn tượng trên mạng xã hội, phản ứng tự nhiên đầu tiên của bạn là gì?",
+                options: [
+                    { text: "A. Tò mò về cách họ lên ý tưởng, kết hợp màu sắc, hình ảnh và thông điệp để thu hút người xem.", score: 1 },
+                    { text: "B. Chỉ quan tâm đến doanh số hoặc số lượng người tiếp cận mà chiến dịch đó mang lại.", score: 0 },
+                    { text: "C. Lướt qua như một nội dung giải trí thông thường và ít khi suy nghĩ sâu thêm.", score: 0 },
+                    { text: "D. Xem xét khía cạnh kỹ thuật lập trình hoặc nền tảng công nghệ đứng sau ứng dụng đó.", score: 0 }
+                ]
+            },
+            {
+                question: "Trong các buổi làm việc nhóm hoặc dự án giả định, bạn thường cảm thấy hào hứng và tự tin nhất khi đảm nhận vai trò nào?",
+                options: [
+                    { text: "A. Xây dựng bảng dòng thời gian (timeline), quản lý ngân sách và kiểm soát rủi ro tài chính.", score: 0 },
+                    { text: "B. Phát triển ý tưởng cốt lõi, phác thảo câu chuyện (storyboard) hoặc trực tiếp thiết kế ấn phẩm truyền thông.", score: 1 },
+                    { text: "C. Tìm kiếm tài liệu, tổng hợp dữ liệu số liệu thô từ các nguồn nghiên cứu có sẵn.", score: 0 },
+                    { text: "D. Đại diện nhóm thuyết trình và phản biện các câu hỏi từ hội đồng.", score: 0 }
+                ]
+            },
+            {
+                question: "Môi trường học tập tại SMD thường xuyên yêu cầu sinh viên phải đối mặt với các đồ án thực tế, chạy deadline dồn dập và nhận phản hồi (feedback) liên tục. Tâm lý của bạn đối với áp lực này như thế nào?",
+                options: [
+                    { text: "A. Dễ bị nản lòng, stress nặng và có xu hướng muốn làm việc theo các quy trình chuẩn chỉnh, ít thay đổi.", score: 0 },
+                    { text: "B. Cảm thấy kích thích bởi thử thách, sẵn sàng thử nghiệm nhiều phương án và coi feedback là chất liệu để cải tiến sản phẩm.", score: 1 },
+                    { text: "C. Chỉ muốn làm mọi thứ ở mức vừa đủ để qua môn, không thích đào sâu hay làm mới ý tưởng.", score: 0 },
+                    { text: "D. Hy vọng mọi người luôn đồng ý với ý kiến của mình và ghét việc phải sửa đổi sản phẩm sáng tạo.", score: 0 }
+                ]
+            },
+            {
+                question: "Về mặt công cụ và công nghệ biểu đạt, bạn có xu hướng hay mong muốn phát triển bản thân theo hướng nào sau đây?",
+                options: [
+                    { text: "A. Thành thạo các phần mềm như Adobe Photoshop, Illustrator, Premiere hoặc các công cụ tạo tác hình ảnh, video bằng AI.", score: 1 },
+                    { text: "B. Sử dụng thành thục các hàm tính toán phức tạp trong Excel, SPSS hoặc các công cụ phân tích tài chính.", score: 0 },
+                    { text: "C. Tập trung vào việc viết các đoạn mã (code) để xây dựng cấu trúc phần cứng hoặc mạng lưới an ninh mạng.", score: 0 },
+                    { text: "D. Chỉ muốn sử dụng các công cụ soạn thảo văn bản cơ bản như Word để làm báo cáo lý thuyết.", score: 0 }
+                ]
+            },
+            {
+                question: "Đối với bạn, mối quan hệ giữa 'Yếu tố nghệ thuật' (Art) và 'Mục tiêu kinh tế' (Economics) trong một sản phẩm truyền thông nên được nhìn nhận như thế nào?",
+                options: [
+                    { text: "A. Nghệ thuật là trên hết, sản phẩm chỉ cần đẹp và thỏa mãn cái tôi của người làm, không cần quan tâm đến hiệu quả thị trường.", score: 0 },
+                    { text: "B. Truyền thông chỉ cần thực dụng, không cần đẹp hay có tính thẩm mỹ, miễn là bán được hàng.", score: 0 },
+                    { text: "C. Nghệ thuật và thiết kế là công cụ chiến lược để truyền tải thông điệp, tạo ra giá trị cảm xúc và tối ưu hóa hiệu quả kinh tế cho tổ chức.", score: 1 },
+                    { text: "D. Hai yếu tố này hoàn toàn mâu thuẫn và không bao giờ có thể kết hợp được với nhau.", score: 0 }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+        let selectedScore = null;
+
+        window.onload = function() {
+            loadQuizQuestion();
+        };
+
+        // ĐIỀU HƯỚNG TRANG CHÍNH
+        function navigateTo(pageId) {
+            stopYoutubeVideo();
+
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+
+            const activePage = document.getElementById('page-' + pageId);
+            if (activePage) {
+                activePage.classList.remove('hidden');
+            }
+
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('text-timDam', 'border-b-2', 'border-timDam');
+                btn.classList.add('text-slate-600');
+            });
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.remove('text-slate-600');
+                activeNav.classList.add('text-timDam', 'border-b-2', 'border-timDam');
+            }
+
+            if (pageId === 'explorer') {
+                resetCareerFilter();
+            }
+            if (pageId === 'quiz') {
+                resetQuiz();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // CORES LOGIC QUIZ TƯƠNG TÁC
+        function loadQuizQuestion() {
+            selectedScore = null;
+            const nextBtn = document.getElementById('quiz-next-btn');
+            nextBtn.disabled = true;
+            nextBtn.classList.remove('text-vangHl', 'hover:underline', 'cursor-pointer');
+            nextBtn.classList.add('text-slate-400', 'cursor-not-allowed');
+
+            document.getElementById('quiz-progress').textContent = `Câu ${currentQuestionIndex + 1}/${quizData.length}`;
+            
+            const currentData = quizData[currentQuestionIndex];
+            document.getElementById('quiz-question-text').textContent = currentData.question;
+            
+            const container = document.getElementById('quiz-options-container');
+            container.innerHTML = '';
+            
+            currentData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left bg-white/5 hover:bg-camNeon/20 p-3 rounded-xl text-xs font-semibold transition border border-white/10 block text-purple-100";
+                btn.textContent = opt.text;
+                
+                btn.onclick = function() {
+                    const allButtons = container.querySelectorAll('button');
+                    allButtons.forEach(b => {
+                        b.className = "w-full text-left bg-white/5 hover:bg-camNeon/20 p-3 rounded-xl text-xs font-semibold transition border border-white/10 block text-purple-100";
+                    });
+                    
+                    btn.className = "w-full text-left bg-camNeon text-white font-black p-3 rounded-xl text-xs transition border-2 border-white shadow-[0_0_15px_rgba(255,107,53,0.5)] block";
+                    
+                    selectedScore = opt.score;
+                    
+                    nextBtn.disabled = false;
+                    nextBtn.classList.remove('text-slate-400', 'cursor-not-allowed');
+                    nextBtn.classList.add('text-vangHl', 'hover:underline', 'cursor-pointer');
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function nextQuestion() {
+            if (selectedScore === null) return;
+            totalScore += selectedScore;
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex >= quizData.length) {
+                showQuizResult();
+            } else {
+                loadQuizQuestion();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-card').classList.add('hidden');
+            const resultCard = document.getElementById('quiz-result-card');
+            resultCard.classList.remove('hidden');
+            
+            const titleElement = document.getElementById('result-title');
+            const descElement = document.getElementById('result-desc');
+            
+            if (totalScore >= 4) {
+                titleElement.textContent = "🎯 BẠN LÀ THỦ LĨNH SÁNG TẠO SMD TƯƠNG LAI!";
+                descElement.textContent = `Điểm số phù hợp: ${totalScore}/5. Bạn sở hữu tư duy thiết kế bùng nổ, không ngại thử thách đổi mới, luôn coi trọng giá trị cốt lõi giao hòa giữa mỹ thuật số và hiệu quả kinh tế chiến lược. Khoa SMD của UEH chính là bệ phóng hoàn hảo dành riêng cho bạn bứt phá mọi giới hạn!`;
+            } else if (totalScore >= 2) {
+                titleElement.textContent = "✨ BẠN CÓ TIỀN NĂNG GIAO THOA CỦA NGÀNH TRUYỀN THÔNG";
+                descElement.textContent = `Điểm số phù hợp: ${totalScore}/5. Bạn có mối quan tâm nhất định đến việc kiến tạo hình ảnh trực quan hoặc quản trị thông điệp quảng cáo. Chỉ cần mài giũa thêm tính nhạy bén với thị trường tại môi trường SMD, bạn hoàn toàn có thể biến đam mê thành những giải pháp đột phá.`;
+            } else {
+                titleElement.textContent = "📈 BẠN PHÙ HỢP HƠN VỚI KHỐI NGÀNH QUẢN TRỊ TRUYỀN THỐNG / PHÂN TÍCH";
+                descElement.textContent = `Điểm số phù hợp: ${totalScore}/5. Bạn có xu hướng ưa chuộng tính logic chặt chẽ, các con số báo cáo chính xác, quy trình vận hành an toàn hoặc các nền tảng kỹ thuật chuyên sâu hơn là công việc sáng tạo đồ họa liên tục thay đổi. Hãy tham khảo thêm định hướng tư vấn từ các đại sứ sinh viên nhé!`;
+            }
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            totalScore = 0;
+            selectedScore = null;
+            document.getElementById('quiz-result-card').classList.add('hidden');
+            document.getElementById('quiz-card').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        // BỘ LỌC HASHTAG NGHỀ NGHIỆP
+        function toggleFilter(btn, tagCode) {
+            if (btn.classList.contains('bg-white')) {
+                btn.classList.remove('bg-white', 'text-timDen');
+                btn.classList.add('bg-camNeon', 'text-white');
+                if (!activeTags.includes(tagCode)) activeTags.push(tagCode);
+            } else {
+                btn.classList.remove('bg-camNeon', 'text-white');
+                btn.classList.add('bg-white', 'text-timDen');
+                activeTags = activeTags.filter(t => t !== tagCode);
+            }
+            applyCareerFilter();
+        }
+
+        function applyCareerFilter() {
+            const cards = document.querySelectorAll('.career-card');
+            if (activeTags.length === 0) {
+                cards.forEach(card => card.classList.remove('hidden'));
+                return;
+            }
+            cards.forEach(card => {
+                const cardTags = card.getAttribute('data-tags').split(' ');
+                const isMatch = activeTags.some(tag => cardTags.includes(tag));
+                if (isMatch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function resetCareerFilter() {
+            activeTags = [];
+            const buttons = document.querySelectorAll('.career-tag-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-camNeon', 'text-white');
+                btn.classList.add('bg-white', 'text-timDen');
+            });
+            const cards = document.querySelectorAll('.career-card');
+            cards.forEach(card => card.classList.remove('hidden'));
+        }
+
+        // TẠM DỪNG VIDEO YOUTUBE
+        function stopYoutubeVideo() {
+            const iframe = document.getElementById('smd-youtube-video');
+            if (iframe) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+        }
+
+        function viewPost(postId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            const activePost = document.getElementById('page-' + postId);
+            if (activePost) {
+                activePost.classList.remove('hidden');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('span:last-child');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = '−';
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>
